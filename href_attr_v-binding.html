@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id = 'app'>
+        <p>Go To <a v-bind:href="getLink()">Google</a></p>
+        
+    </div>
+    <div id = 'inner'>
+        <p>{{template}}</p>
+    </div>
+    <script>
+        (()=>{
+            const app = new Vue({
+            el:'#app',
+            data:{
+                link:'http://google.com'
+            },
+            methods: {
+                getLink: function(){
+                    return this.link;
+                }
+            },
+        });
+        const inner = new Vue({
+            el:'#inner',
+            data: () => ({ link: 'http://twitter.com' }),
+            template: `<a :href="link">My Link</a>`,
+            methods:{
+                setUrl: function(url){
+                    this.link = url;
+                }
+            }
+            // `:href` is the same ad `v-bind:href`, just more concise.
+        });
+        inner.setUrl(app.link);
+        })();
+       
+    </script>
+</body>
+</html>
