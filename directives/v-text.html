@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id='app'>
+        <span v-text="title"></span>
+        <p>{{content}}</p>
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                title:'Directive v -text',
+                content:'Here the prefix is v which is the default. The directive ID is text and the expression is message. This directive instructs Vue.js to update the div’s textContent whenever the message property on the Vue instance changes.'
+            },
+        });
+    </script>
+</body>
+</html>
