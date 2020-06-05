@@ -9,6 +9,10 @@
 <body>
     <div id = 'app'>
         <button @click="show = !show">Click</button>
+        <!-- v-if or v-else 
+          works as a attacing or detaching element 
+          on the other hand v-show works on disply attrubuite
+        -->
         <p v-if="show"> v-if value of show is: {{show}}</p>
         <p v-else> v-else value of show is: {{show}}</p>
 
