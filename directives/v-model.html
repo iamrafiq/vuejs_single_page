@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id = 'app'>
+        <p>The v-model Vue directive allows us to create a two-way binding.  You can bind a form input element for example, and make it change the Vue data property when the user changes the content of the field:</p>
+        <input v-model="message1" placeholder="Enter a message">
+        <p>Message is: {{ message1 }}</p>
+        <select v-model="selected1">
+            <option disabled value="">Choose a fruit</option>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Strawberry</option>
+          </select>
+          <span>Fruit chosen: {{ selected1 }}</span>
+          <p>To make the model update when the change event occurs, and not any time the user presses a key, you can use v-model.lazy instead of just v.model.
+
+            Working with input fields, v-model.trim is useful because it automatically removes whitespace.
+            
+            And if you accept a number instead than a string, make sure you use v-model.number.</p>
+
+            <input v-model.lazy="message2" placeholder="Enter a message and press enter">
+            <p>Message is: {{ message2 }}</p>
+            <select v-model.lazy="selected2">
+                <option disabled value="">Choose a fruit</option>
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Strawberry</option>
+              </select>
+              <span>Fruit chosen: {{ selected2 }}</span>
+
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                message1:'',
+                selected1:'Choose a fruit',
+                message2:'',
+                selected2:'Choose a fruit',
+            },
+            methods: {
+                
+            },
+        });
+    </script>
+</body>
+</html>
