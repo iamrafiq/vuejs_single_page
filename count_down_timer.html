@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <counter></counter>
+        <counter></counter>
+        <counter></counter>
+    </div>
+    <script>
+        Vue.component('counter', {
+            template: '<button v-on:click="countDownTimer()">{{ countDown }}</button>',
+            data: function () {
+                return {
+                    countDown: 10,
+                    countDownTimer() {
+                        if (this.countDown > 0) {
+                            setTimeout(() => {
+                                this.countDown -= 1
+                                this.countDownTimer();
+                            }, 1000)
+                        }
+                    }
+                }
+            }
+        })
+
+        const app = new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+
+</html>

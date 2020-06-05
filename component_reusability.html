@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <simple-counter></simple-counter>
+        <simple-counter></simple-counter>
+        <simple-counter></simple-counter>
+    </div>
+    <script>
+
+        var data = { counter: 0 }
+
+        Vue.component('simple-counter', {
+            template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+            // data is technically a function, so Vue won't
+            // complain, but we return the same object
+            // reference for each component instance
+             data: function () {
+                 return data
+             }
+            /**
+             * Since all three component instances share the same data object,
+             *  incrementing one counter increments them all! Ouch. 
+             * Let’s fix this by instead returning a fresh data object:
+             * Now all our counters each have their own internal state.
+             * */
+             /*data: function () {
+                return {
+                    counter: 0
+                }
+             }*/
+
+        })
+
+        new Vue({
+            el: '#app'
+        });
+    </script>
+
+</body>
+
+</html>
