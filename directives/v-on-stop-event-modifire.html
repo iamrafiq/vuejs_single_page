@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <p v-on:mousemove="mouseMove">X:{{x}}, Y:{{y}} <span v-on:mousemove="stopMoving">Dead Spot 1</span></p>
+        <p> OR Using Vuejs event modifire</p>
+        <p v-on:mousemove="mouseMove">X:{{x}}, Y:{{y}} <span v-on:mousemove.stop="">Dead Spot 2</span></p>
+
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                x: 0,
+                y: 0
+            },
+            methods: {
+                mouseMove: function (event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                stopMoving: function (event) {
+                    event.stopPropagation();
+
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
