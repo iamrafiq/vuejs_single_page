@@ -8,6 +8,8 @@
 </head>
 <body>
     <div id = 'app'>
+        <input v-on:keyup="alertMe">
+        <input v-on:keyup.enter="alertMeWhenEnter">
 
     </div>
     <script>
@@ -17,7 +19,12 @@
 
             },
             methods: {
-                
+                alertMe:function(event){
+                    alert(event);
+                },
+                alertMeWhenEnter: function(event){
+                    alert(event);
+                }
             },
         });
     </script>

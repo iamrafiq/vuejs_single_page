@@ -8,13 +8,16 @@
 </head>
 <body>
     <div id = 'app'>
-
+        <button v-on:click="counter++">Click Me</button>
+        <p>{{counter * 2 < 10? 'Smaller then 10': 'Greater then 10'}}</p>
     </div>
     <script>
         const app = new Vue({
             el:'#app',
-            data:{
-
+            data: function(){
+                return {
+                    counter: 0
+                }
             },
             methods: {
                 
