@@ -13,8 +13,16 @@
     <script>
         const app = new Vue({
             el:'#app',
-            data:{
-
+            data: function(){
+                return{
+                    
+                }
+            },
+            computed: { 
+                /*
+                 inside this section all function will be treated as a property and 
+                 will not re-render if it has no dependency*/
+                
             },
             methods: {
                 
