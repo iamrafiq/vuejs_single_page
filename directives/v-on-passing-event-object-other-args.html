@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id = 'app'>
+        <!-- $event is reserved variable by vuejs where it store the event object that passed by js when user trigger a event -->
+        <button v-on:click="increase(2, $event)">Click Me</button>
+        <p>{{counter}}</p>
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:function(){
+                return{
+                    counter:0
+                }
+            },
+            methods: {
+                increase: function(step, event){
+                    this.counter += step;
+                    console.log(event);
+                }
+            },
+        });
+    </script>
+</body>
+</html>
