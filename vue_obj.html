@@ -15,14 +15,19 @@
             el:'#app',
             data: function(){
                 return{
-                    
+
                 }
             },
-            computed: { 
+            computed: { // Syncronus task
                 /*
                  inside this section all function will be treated as a property and 
                  will not re-render if it has no dependency*/
                 
+            },
+            watch: { // Async Task
+                  /*
+                 inside this section all function will be treated as a property and 
+                 will not re-render if it has no dependency*/
             },
             methods: {
                 

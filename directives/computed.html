@@ -33,7 +33,8 @@
             computed: {
                 /*
                  inside this section all function will be treated as a property and 
-                 will not re-render if it has no dependency*/
+                 will not re-render if it has no dependency
+                 Only works for syncronus task or Async use watch*/
                  output:function(){
                      console.log('couputed section called')
                      return this.counter1 <5? 'Smaller then 5': 'Greater then 5;'
