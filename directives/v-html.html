@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id = 'app'>
+        <h1 v-text='title'></h1>
+        <span v-html='srcHtml'></span>
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                title:'v-html',
+                srcHtml:`<p style="color:blue;">When you use interpolation to print a data property, the HTML is escaped. This is a great way that Vue uses to automatically protect from XSS attacks. There are cases however where you want to output HTML and make the browser interpret it. You can use the v-html directive:</p>`
+            },
+            methods: {
+                
+            },
+        });
+    </script>
+</body>
+</html>
