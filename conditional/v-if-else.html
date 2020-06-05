@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id = 'app'>
+        <button @click="show = !show">Click</button>
+        <p v-if="show"> v-if value of show is: {{show}}</p>
+        <p v-else> v-else value of show is: {{show}}</p>
+
+
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data: function(){
+                return{
+                    show: true
+                }
+            },
+            computed: { // Syncronus task
+                /*
+                 inside this section all function will be treated as a property and 
+                 will not re-render if it has no dependency*/
+                
+            },
+            watch: { // Async Task
+                  /*
+                 inside this section all function will be treated as a property and 
+                 will not re-render if it has no dependency*/
+            },
+            methods: {
+                
+            },
+        });
+    </script>
+</body>
+</html>
