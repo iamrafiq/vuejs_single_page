@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id = 'app'>
+        <h1 v-text='title'></h1><br>
+        <a v-bind:href = 'getLink1()'>Google</a><br>
+        <a :href = 'getLink1()'>Google</a><br>
+        <a v-bind:href = 'link2'>Facebook</a><br>
+        <a :href = 'link2'>Facebook</a><br>
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                title:'v-bind',
+                link1:'http://google.com',
+                link2:'http://facebook.com'
+            },
+            methods: {
+                getLink1: function(){
+                    return this.link1;
+                }
+            },
+        });
+    </script>
+</body>
+</html>
