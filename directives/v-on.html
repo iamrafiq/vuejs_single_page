@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id = 'app'>
+        <a v-on:click="onClick">Click Me</a><br>
+        <a v-on:click="onClickWithArg('Hi there testing')">Click Me</a><br>    
+        <a v-on:click="counter = counter + 1">{{counter}}</a><br>
+
+
+
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data: function(){
+                return {
+                    counter:0
+                }
+            },
+            methods: {
+                onClick:function(){
+                    alert('test')
+                },
+                onClickWithArg: function(arg){
+                    alert(arg);
+                }
+            },
+        });
+    </script>
+</body>
+</html>
