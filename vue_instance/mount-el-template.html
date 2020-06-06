@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id='root'>
+
+    </div>
+    <script>
+        const app = new Vue({
+            data: function () {
+                return {
+
+                }
+            },
+            template: "<h1>Header One</h1>"
+        });
+        //first mount it
+        app.$mount();
+        // add the mounted object as child of root tag
+        var bool = true;
+        if (bool) {
+            // we can add our mounted object later into dom
+            document.getElementById('root').appendChild(app.$el);
+        }
+    </script>
+</body>
+
+</html>
