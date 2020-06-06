@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id = 'app'>
+        <ul>
+            <li v-for="person in persons">
+                <span v-for = "(value, key, index) in person">
+                    {{key}}: {{value}} - {{index}}, <br>
+                </span>
+                <br>
+            </li>
+        </ul>
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data: function(){
+                return{
+                    ingredients:['meet', 'fruit', 'cookies'],
+                    persons:[{name:'Suru', age:4, color:'brown'}, {name: 'Sofia', age:'5', color:'white'}]
+                }
+            },
+            computed: { // Syncronus task
+                /*
+                 inside this section all function will be treated as a property and 
+                 will not re-render if it has no dependency*/
+                
+            },
+            watch: { // Async Task
+                  /*
+                 inside this section all function will be treated as a property and 
+                 will not re-render if it has no dependency*/
+            },
+            methods: {
+                
+            },
+        });
+    </script>
+</body>
+</html>
