@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id = 'app'>
+        <button @click="changeState" ref="btnToggle">Hide</button>
+        <div v-show="show">
+            <h1>1 to 100</h1>
+            <p v-for="i in 100">{{i}}</p>
+        </div>
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data: function(){
+                return{
+                    show: true
+                }
+            },
+            methods: {
+                changeState: function(){
+                    this.show = !this.show;
+                    this.$refs.btnToggle.innerText = this.show?'Hide':'Show';
+                    
+                }
+            },
+        });
+    </script>
+</body>
+</html>

@@ -45,17 +45,16 @@
             },
         });
 
-        setTimeout(function(){
+        setTimeout(function () {
             app1.title = "View Instance one title changeing from  timer";
 
         }, 3000);
+        var data = {
+            title: "view instance two"
+        };
         const app2 = new Vue({
             el: '#app2',
-            data: function () {
-                return {
-                    title: "view instance two"
-                }
-            },
+            data: data,
             computed: { // Syncronus task
                 /*
                  inside this section all function will be treated as a property and 
@@ -68,11 +67,15 @@
                will not re-render if it has no dependency*/
             },
             methods: {
-                onChange: function (){
+                onChange: function () {
                     app1.title = "View Instance one title changeing from inside two";
                 }
             },
         });
+        console.log(app1);
+        console.log(app1.$data.title)
+        console.log(app2.$data === data);
+
     </script>
 </body>
 
