@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id='app1'>
+        <p>
+            {{title}}
+        </p>
+    </div>
+    <div id='app2'>
+        <p>
+            {{title}}
+        </p>
+    </div>
+
+    <script>
+        const app1 = new Vue({
+            el: '#app1',
+            data: function () {
+                return {
+                    title: "view instance one"
+                }
+            },
+            computed: { // Syncronus task
+                /*
+                 inside this section all function will be treated as a property and 
+                 will not re-render if it has no dependency*/
+
+            },
+            watch: { // Async Task
+                /*
+               inside this section all function will be treated as a property and 
+               will not re-render if it has no dependency*/
+            },
+            methods: {
+
+            },
+        });
+
+        const app2 = new Vue({
+            el: '#app2',
+            data: function () {
+                return {
+                    title: "view instance two"
+                }
+            },
+            computed: { // Syncronus task
+                /*
+                 inside this section all function will be treated as a property and 
+                 will not re-render if it has no dependency*/
+
+            },
+            watch: { // Async Task
+                /*
+               inside this section all function will be treated as a property and 
+               will not re-render if it has no dependency*/
+            },
+            methods: {
+
+            },
+        });
+    </script>
+</body>
+
+</html>
